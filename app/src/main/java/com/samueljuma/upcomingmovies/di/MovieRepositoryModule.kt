@@ -1,5 +1,7 @@
 package com.samueljuma.upcomingmovies.di
 
+import com.samueljuma.upcomingmovies.data.network.MovieAPIService
+import com.samueljuma.upcomingmovies.data.room.MovieDao
 import com.samueljuma.upcomingmovies.repository.MovieRepository
 import dagger.Module
 import dagger.Provides
@@ -13,7 +15,7 @@ object MovieRepositoryModule {
 
     @Singleton
     @Provides
-    fun provideMovieRepository(): MovieRepository{
-        return MovieRepository()
+    fun provideMovieRepository(movieDao: MovieDao, movieAPIService: MovieAPIService): MovieRepository{
+        return MovieRepository(movieDao, movieAPIService)
     }
 }

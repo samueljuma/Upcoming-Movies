@@ -66,6 +66,12 @@ dependencies {
     implementation ("com.squareup.moshi:moshi:1.14.0")
     implementation ("com.squareup.moshi:moshi-kotlin:1.14.0")
 
+    // Room database
+    implementation ("androidx.room:room-runtime:2.6.1")
+    kapt ("androidx.room:room-compiler:2.6.1")
+    // Kotlin Extensions and Coroutines support for Room
+    implementation ("androidx.room:room-ktx:2.6.1")
+
 
     //Hilt
     implementation ("com.google.dagger:hilt-android:2.48")
