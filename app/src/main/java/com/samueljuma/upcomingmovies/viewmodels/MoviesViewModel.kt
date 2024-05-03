@@ -36,4 +36,14 @@ class MoviesViewModel @Inject constructor(private val movieRepository: MovieRepo
         }
     }
 
+    private  val _navigateToDetails = MutableLiveData<Movie?>()
+    val navigateToDetails: LiveData<Movie?> = _navigateToDetails
+    fun onMovieClicked(movie: Movie){
+        _navigateToDetails.value = movie
+    }
+
+    fun doneNavigatingToDetails(){
+        _navigateToDetails.value = null
+    }
+
 }
