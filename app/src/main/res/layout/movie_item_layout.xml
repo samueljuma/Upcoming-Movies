@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
         app:cardCornerRadius="10dp"
+        android:onClick="@{() -> clickListener.onClick(movie)}"
         app:cardElevation="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout

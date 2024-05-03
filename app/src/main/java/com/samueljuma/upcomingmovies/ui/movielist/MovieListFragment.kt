@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.samueljuma.upcomingmovies.databinding.FragmentMovieListBinding
 import com.samueljuma.upcomingmovies.utils.API_KEY
@@ -56,6 +58,16 @@ class MovieListFragment : Fragment() {
                     Log.i("TAGGY", "Error: $error")
                 }
             }
+        }
+
+        viewModel.navigateToDetails.observe(viewLifecycleOwner){movie->
+            movie?.let {
+                this.findNavController().navigate(
+                    MovieListFragmentDirections.actionMovieListFragmentToMovieDetailsFragment()
+                )
+                viewModel.doneNavigatingToDetails()
+            }
+
         }
 
 
