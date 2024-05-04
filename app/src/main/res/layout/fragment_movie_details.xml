@@ -12,174 +12,198 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context=".ui.moviedetails.MovieDetailsFragment">
-
-        <TextView
-            android:id="@+id/textView9"
-            style="@style/default_bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:text="Release Date"
-            android:textSize="14sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/textView7"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/textView7" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="0dp"
-            android:layout_height="450dp"
-            android:scaleType="fitXY"
-            app:posterImageUrl="@{movie}"
-            tools:src="@drawable/sample_poster_w342"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView4"
-            style="@style/default_bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:padding="8dp"
-            android:text="@{movie.title}"
-            android:textAllCaps="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2"
-            tools:text="Creed" />
-
-        <TextView
-            android:id="@+id/textView5"
-            style="@style/default_bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:text="Original\nLanguage"
-            android:textAlignment="center"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toStartOf="@+id/textView7"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-        <TextView
-            android:id="@+id/textView6"
-            style="@style/default_light"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{movie.original_language}"
-            android:textAlignment="center"
-            android:textColor="@color/design_default_color_primary_dark"
-            android:textSize="14sp"
-            android:textStyle="normal"
-            app:layout_constraintEnd_toEndOf="@+id/textView5"
-            app:layout_constraintStart_toStartOf="@+id/textView5"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
-            tools:text="en" />
-
-        <TextView
-            android:id="@+id/textView7"
-            style="@style/default_bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Original Title"
-            android:textSize="14sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/textView5"
-            app:layout_constraintEnd_toStartOf="@+id/textView9"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/textView5" />
-
-        <TextView
-            android:id="@+id/textView8"
-            style="@style/default_light"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:ellipsize="none"
-            android:text="@{movie.original_title}"
-            android:textColor="@color/design_default_color_primary_dark"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toStartOf="@+id/view2"
-            app:layout_constraintStart_toEndOf="@+id/view"
-            app:layout_constraintTop_toBottomOf="@+id/textView7"
-            tools:text="The Zone of Interest" />
-
-        <TextView
-            android:id="@+id/textView10"
-            style="@style/default_light"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            tools:text="2024-03-20"
-            android:text="@{movie.release_date}"
-            android:textColor="@color/design_default_color_primary_dark"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@+id/textView9"
-            app:layout_constraintStart_toStartOf="@+id/textView9"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-        <TextView
-            android:id="@+id/textView11"
-            style="@style/default_bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="Overview"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-        <TextView
-            android:id="@+id/textView12"
-            style="@style/default_light"
+        android:background="@color/black"
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="40dp"
-            android:text="@{movie.overview}"
-            android:lineHeight="25dp"
-            android:textColor="@color/design_default_color_primary_dark"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11"
-            tools:text="@string/sample_overview" />
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:backgroundTint="@color/black"
+                android:layout_width="match_parent"
+                android:layout_margin="6dp"
+                app:cardCornerRadius="10dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="450dp"
+                    android:scaleType="fitXY"
+                    app:posterImageUrl="@{movie}"
+                    tools:src="@drawable/sample_poster_w342"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.cardview.widget.CardView>
 
-        <View
-            android:id="@+id/view"
-            android:layout_width="1dp"
-            android:layout_height="50dp"
-            android:background="@color/design_default_color_primary_dark"
-            app:layout_constraintBottom_toBottomOf="@+id/textView8"
-            app:layout_constraintEnd_toStartOf="@+id/textView7"
-            app:layout_constraintStart_toEndOf="@+id/textView5"
-            app:layout_constraintTop_toTopOf="@+id/textView7" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/movie_details_bc"
+                tools:context=".ui.moviedetails.MovieDetailsFragment">
+                <TextView
+                    android:id="@+id/textView9"
+                    style="@style/default_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="Release Date"
+                    android:textColor="@color/red"
+                    android:textSize="14sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/textView7"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textView7" />
 
-        <View
-            android:id="@+id/view2"
-            android:layout_width="1dp"
-            android:layout_height="50dp"
-            android:background="@color/design_default_color_primary_dark"
-            app:layout_constraintBottom_toBottomOf="@+id/view"
-            app:layout_constraintEnd_toStartOf="@+id/textView9"
-            app:layout_constraintStart_toEndOf="@+id/textView7"
-            app:layout_constraintTop_toTopOf="@+id/view" />
+                <TextView
+                    android:id="@+id/textView4"
+                    style="@style/default_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:padding="8dp"
+                    android:text="@{movie.title}"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Creed" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    style="@style/default_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Original\nLanguage"
+                    android:textAlignment="center"
+                    android:textColor="@color/red"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/textView7"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    style="@style/default_light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{movie.original_language}"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:layout_constraintEnd_toEndOf="@+id/textView5"
+                    app:layout_constraintStart_toStartOf="@+id/textView5"
+                    app:layout_constraintTop_toBottomOf="@+id/textView5"
+                    tools:text="en" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    style="@style/default_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Original Title"
+                    android:textSize="14sp"
+                    android:textColor="@color/red"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/textView5"
+                    app:layout_constraintEnd_toStartOf="@+id/textView9"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textView5" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    style="@style/default_light"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginTop="16dp"
+                    android:ellipsize="none"
+                    android:text="@{movie.original_title}"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/view2"
+                    app:layout_constraintHorizontal_bias="0.533"
+                    app:layout_constraintStart_toEndOf="@+id/view"
+                    app:layout_constraintTop_toBottomOf="@+id/textView7"
+                    tools:text="The Zone of Interest" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    style="@style/default_light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    tools:text="2024-03-20"
+                    android:text="@{movie.release_date}"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/textView9"
+                    app:layout_constraintStart_toStartOf="@+id/textView9"
+                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    style="@style/default_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Overview"
+                    android:textColor="@color/red"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    style="@style/default_light"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="40dp"
+                    android:text="@{movie.overview}"
+                    android:lineHeight="25dp"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView11"
+                    tools:text="@string/sample_overview" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="1dp"
+                    android:layout_height="50dp"
+                    android:background="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView8"
+                    app:layout_constraintEnd_toStartOf="@+id/textView7"
+                    app:layout_constraintStart_toEndOf="@+id/textView5"
+                    app:layout_constraintTop_toTopOf="@+id/textView7" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="1dp"
+                    android:layout_height="50dp"
+                    android:background="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/view"
+                    app:layout_constraintEnd_toStartOf="@+id/textView9"
+                    app:layout_constraintStart_toEndOf="@+id/textView7"
+                    app:layout_constraintTop_toTopOf="@+id/view" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
     </ScrollView>
 
 </layout>
