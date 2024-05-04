@@ -18,5 +18,9 @@
         android:id="@+id/movieDetailsFragment"
         android:name="com.samueljuma.upcomingmovies.ui.moviedetails.MovieDetailsFragment"
         android:label="MovieDetailsFragment"
-        tools:layout="@layout/fragment_movie_details"/>
+        tools:layout="@layout/fragment_movie_details">
+        <argument
+            android:name="movie"
+            app:argType="com.samueljuma.upcomingmovies.data.Movie" />
+    </fragment>
 </navigation>

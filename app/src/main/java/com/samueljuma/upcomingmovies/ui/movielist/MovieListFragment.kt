@@ -23,7 +23,7 @@ class MovieListFragment : Fragment() {
 
     private lateinit var binding: FragmentMovieListBinding
 
-    private val viewModel: MoviesViewModel by viewModels()
+    private val viewModel: MovieListViewModel by viewModels()
 
     private lateinit var adapter: MovieListAdapter
 
@@ -57,13 +57,15 @@ class MovieListFragment : Fragment() {
                     Toast.makeText(context, "Error Getting the data", Toast.LENGTH_SHORT).show()
                     Log.i("TAGGY", "Error: $error")
                 }
+
+                else -> {Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show()}
             }
         }
 
         viewModel.navigateToDetails.observe(viewLifecycleOwner){movie->
             movie?.let {
                 this.findNavController().navigate(
-                    MovieListFragmentDirections.actionMovieListFragmentToMovieDetailsFragment()
+                    MovieListFragmentDirections.actionMovieListFragmentToMovieDetailsFragment(movie)
                 )
                 viewModel.doneNavigatingToDetails()
             }

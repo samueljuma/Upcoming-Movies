@@ -1,7 +1,9 @@
 package com.samueljuma.upcomingmovies.data
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
-
+@Parcelize
 data class Movie(
     val id: Int,
     val original_language: String,
@@ -10,4 +12,4 @@ data class Movie(
     val poster_path: String,
     val release_date: String,
     val title: String
-)
+):Parcelable

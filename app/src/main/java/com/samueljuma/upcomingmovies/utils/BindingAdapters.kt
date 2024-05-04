@@ -21,3 +21,17 @@ fun loadImage(imageView: ImageView, movie: Movie?){
     }
 
 }
+@BindingAdapter("posterImageUrl")
+fun loadPoster(imageView: ImageView, movie: Movie?){
+    movie?.let {
+        Glide.with(imageView.context)
+//            .load("https://image.tmdb.org/t/p//w300_and_h300_bestv2"+it.poster_path)
+            .load("https://image.tmdb.org/t/p/w500"+it.poster_path)
+            .apply (
+                RequestOptions()
+                    .placeholder(R.drawable.loading_animation)
+                    .error(R.drawable.ic_broken_image))
+            .into(imageView)
+    }
+
+}
