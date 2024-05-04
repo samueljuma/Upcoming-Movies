@@ -9,6 +9,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.samueljuma.upcomingmovies.databinding.ActivityMainBinding
 import com.samueljuma.upcomingmovies.utils.API_KEY
 import com.samueljuma.upcomingmovies.utils.Result
@@ -21,6 +27,9 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val viewModel: MoviesViewModel by viewModels()
+
+    private lateinit var navController: NavController
+    private lateinit var appBarConfiguration: AppBarConfiguration
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        enableEdgeToEdge()
@@ -33,7 +42,18 @@ class MainActivity : AppCompatActivity() {
 //            insets
 //        }
 
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        navController = navHostFragment.navController
+        appBarConfiguration = AppBarConfiguration(navController.graph)
+
+        setSupportActionBar(binding.toolbar)
+        setupActionBarWithNavController(navController, appBarConfiguration)
 
 
+
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return findNavController(R.id.fragmentContainerView).navigateUp(appBarConfiguration)
     }
 }

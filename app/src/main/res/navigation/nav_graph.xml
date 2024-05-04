@@ -8,19 +8,21 @@
     <fragment
         android:id="@+id/movieListFragment"
         android:name="com.samueljuma.upcomingmovies.ui.movielist.MovieListFragment"
-        android:label="MovieListFragment"
+        android:label="Home"
         tools:layout="@layout/fragment_movie_list">
         <action
             android:id="@+id/action_movieListFragment_to_movieDetailsFragment"
             app:destination="@id/movieDetailsFragment" />
         <action
             android:id="@+id/action_movieListFragment_to_errorFragment"
-            app:destination="@id/errorFragment" />
+            app:destination="@id/errorFragment"
+            app:popUpTo="@id/movieListFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/movieDetailsFragment"
         android:name="com.samueljuma.upcomingmovies.ui.moviedetails.MovieDetailsFragment"
-        android:label="MovieDetailsFragment"
+        android:label="Movie Details"
         tools:layout="@layout/fragment_movie_details">
         <argument
             android:name="movie"
@@ -29,7 +31,7 @@
     <fragment
         android:id="@+id/errorFragment"
         android:name="com.samueljuma.upcomingmovies.ui.error.ErrorFragment"
-        android:label="ErrorFragment"
+        android:label="Error"
         tools:layout="@layout/fragment_error">
         <action
             android:id="@+id/action_errorFragment_to_movieListFragment"
