@@ -5,5 +5,6 @@
     <color name="red">#D60F00</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#FFFFFF</color>
+    <color name="light_dark">#2B2A2A</color>
 
 </resources>

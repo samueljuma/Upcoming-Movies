@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        android:backgroundTint="#2B2A2A"
+        android:backgroundTint="@color/light_dark"
         app:cardCornerRadius="10dp"
         android:onClick="@{() -> clickListener.onClick(movie)}"
         app:cardElevation="10dp">

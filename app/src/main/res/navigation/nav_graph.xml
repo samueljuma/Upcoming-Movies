@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_movieListFragment_to_movieDetailsFragment"
             app:destination="@id/movieDetailsFragment" />
+        <action
+            android:id="@+id/action_movieListFragment_to_errorFragment"
+            app:destination="@id/errorFragment" />
     </fragment>
     <fragment
         android:id="@+id/movieDetailsFragment"
@@ -22,5 +25,14 @@
         <argument
             android:name="movie"
             app:argType="com.samueljuma.upcomingmovies.data.Movie" />
+    </fragment>
+    <fragment
+        android:id="@+id/errorFragment"
+        android:name="com.samueljuma.upcomingmovies.ui.error.ErrorFragment"
+        android:label="ErrorFragment"
+        tools:layout="@layout/fragment_error">
+        <action
+            android:id="@+id/action_errorFragment_to_movieListFragment"
+            app:destination="@id/movieListFragment" />
     </fragment>
 </navigation>

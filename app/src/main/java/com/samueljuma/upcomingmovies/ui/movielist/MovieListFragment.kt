@@ -60,6 +60,9 @@ class MovieListFragment : Fragment() {
                     val error = result.exception
                     Toast.makeText(context, "Error Getting the data", Toast.LENGTH_SHORT).show()
                     Log.i("TAGGY", "Error: $error")
+                    this.findNavController().navigate(
+                        MovieListFragmentDirections.actionMovieListFragmentToErrorFragment()
+                    )
                 }
 
                 else -> {Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show()}
