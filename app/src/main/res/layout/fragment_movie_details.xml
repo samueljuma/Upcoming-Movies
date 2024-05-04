@@ -183,7 +183,7 @@
                 <View
                     android:id="@+id/view"
                     android:layout_width="1dp"
-                    android:layout_height="50dp"
+                    android:layout_height="40dp"
                     android:background="@color/white"
                     app:layout_constraintBottom_toBottomOf="@+id/textView8"
                     app:layout_constraintEnd_toStartOf="@+id/textView7"
@@ -193,7 +193,7 @@
                 <View
                     android:id="@+id/view2"
                     android:layout_width="1dp"
-                    android:layout_height="50dp"
+                    android:layout_height="40dp"
                     android:background="@color/white"
                     app:layout_constraintBottom_toBottomOf="@+id/view"
                     app:layout_constraintEnd_toStartOf="@+id/textView9"

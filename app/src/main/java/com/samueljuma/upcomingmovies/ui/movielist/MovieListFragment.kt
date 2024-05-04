@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
@@ -41,16 +42,19 @@ class MovieListFragment : Fragment() {
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = GridLayoutManager(context, 2)
 
+        binding.lifecycleOwner = this
+
         viewModel.fetchPopularMovies(API_KEY)
 
         viewModel.movies.observe(viewLifecycleOwner){ result ->
             when(result){
                 is Result.Loading -> {
-                    Toast.makeText(context, "Loading", Toast.LENGTH_SHORT).show()
+                    binding.progressBar3.isVisible = true
                 }
                 is Result.Success -> {
                     val movies = result.data
                     adapter.submitList(movies)
+                    binding.progressBar3.isVisible = false
                 }
                 is Result.Error -> {
                     val error = result.exception
@@ -71,7 +75,6 @@ class MovieListFragment : Fragment() {
             }
 
         }
-
 
         return binding.root
 
