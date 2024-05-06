@@ -36,13 +36,16 @@
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.cardview.widget.CardView>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <androidx.constraintlayout.motion.widget.MotionLayout
+                android:id="@+id/constraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/movie_details_bc"
+                app:layoutDescription="@xml/fragment_movie_details_xml_constraintlayout_scene"
                 tools:context=".ui.moviedetails.MovieDetailsFragment">
+
                 <TextView
                     android:id="@+id/textView9"
                     style="@style/default_bold"
@@ -109,8 +112,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Original Title"
-                    android:textSize="14sp"
                     android:textColor="@color/red"
+                    android:textSize="14sp"
                     app:layout_constraintBaseline_toBaselineOf="@+id/textView5"
                     app:layout_constraintEnd_toStartOf="@+id/textView9"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -122,8 +125,8 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="2dp"
-                    android:layout_marginEnd="2dp"
                     android:layout_marginTop="16dp"
+                    android:layout_marginEnd="2dp"
                     android:ellipsize="none"
                     android:text="@{movie.original_title}"
                     android:textColor="@color/white"
@@ -140,13 +143,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    tools:text="2024-03-20"
                     android:text="@{movie.release_date}"
                     android:textColor="@color/white"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="@+id/textView9"
                     app:layout_constraintStart_toStartOf="@+id/textView9"
-                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                    app:layout_constraintTop_toBottomOf="@+id/textView9"
+                    tools:text="2024-03-20" />
 
                 <TextView
                     android:id="@+id/textView11"
@@ -170,8 +173,8 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="40dp"
-                    android:text="@{movie.overview}"
                     android:lineHeight="25dp"
+                    android:text="@{movie.overview}"
                     android:textColor="@color/white"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -201,7 +204,7 @@
                     app:layout_constraintTop_toTopOf="@+id/view" />
 
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.motion.widget.MotionLayout>
         </LinearLayout>
 
     </ScrollView>

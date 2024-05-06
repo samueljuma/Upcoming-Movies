@@ -18,7 +18,7 @@ class MovieListViewModel @Inject constructor(
     private val _movies = MutableLiveData<Result<List<Movie>>>()
     val movies: LiveData<Result<List<Movie>>> = _movies
 
-    fun fetchPopularMovies(apiKey: String){
+    fun fetchUpcomingMovies(apiKey: String){
 
         viewModelScope.launch {
             /**
@@ -30,6 +30,20 @@ class MovieListViewModel @Inject constructor(
 
             // Fetch movies from repository
             val data = movieRepository.getUpcomingMovies(apiKey)
+
+            // Update LiveData with result
+            _movies.value = data
+        }
+    }
+
+    fun refreshUpcomingMovies(apiKey: String){
+        viewModelScope.launch {
+
+            // Set loading state
+            _movies.value = Result.Loading
+
+            // Fetch movies from repository
+            val data = movieRepository.refreshUpcomingMovies(apiKey)
 
             // Update LiveData with result
             _movies.value = data

@@ -27,9 +27,9 @@ class MovieRepository(
                     movieEntity.title
                 )
             }
-            if(cachedMovies.isNotEmpty()){
+            if (cachedMovies.isNotEmpty()) {
                 Result.Success(cachedMovies)
-            }else{
+            } else {
                 val response = movieAPIService.getMovies(apiKey)
                 if (response.isSuccessful) {
                     val data = response.body()
@@ -53,6 +53,40 @@ class MovieRepository(
                     Result.Error(Exception("Failed to fetch movies"))
                 }
             }
+
+        } catch (e: Exception) {
+            Result.Error(e)
+        }
+    }
+
+    suspend fun refreshUpcomingMovies(apiKey: String): Result<List<Movie>> {
+        return try {
+            //Get Movies from API
+            val response = movieAPIService.getMovies(apiKey)
+            if (response.isSuccessful) {
+                val data = response.body()
+                val movies = data?.movies ?: emptyList()
+
+                // Delete Movies from DB
+                movieDao.clearAllMovies()
+
+                //Insert New List int DB
+                movieDao.insertMovies(movies.map { movie ->
+                    MovieEntity(
+                        movie.id,
+                        movie.original_language,
+                        movie.original_title,
+                        movie.overview,
+                        movie.poster_path,
+                        movie.release_date,
+                        movie.title
+                    )
+                })
+                Result.Success(movies)
+            } else {
+                Result.Error(Exception("Failed to fetch movies"))
+            }
+
 
         } catch (e: Exception) {
             Result.Error(e)
