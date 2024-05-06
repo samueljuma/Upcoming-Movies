@@ -10,6 +10,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuProvider
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
@@ -40,6 +41,9 @@ class MovieListFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentMovieListBinding.inflate(layoutInflater, container, false)
+
+        //Hide Up Button
+        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
         val menuProvider = object: MenuProvider{
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {

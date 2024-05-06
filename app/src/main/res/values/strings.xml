@@ -4,4 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="sample_overview">An American nun embarks on a new journey when she joins a remote convent in the Italian countryside. However, her warm welcome quickly turns into a living nightmare when she discovers her new home harbours a sinister secret and unspeakable horrors.</string>
     <string name="error_message">Looks Like an Error occurred.\nCheck Your Internet and Try Again.</string>
+    <string name="welcome_message_1">A warm welcome to our Upcoming Movies App. \n\nWe are so happy to have you onboard.\n\n Swipe through to learn more about the app or click continue to go to home screen </string>
+    <string name="app_logo">App Logo</string>
+    <string name="continue_btn_text">Continue</string>
 </resources>

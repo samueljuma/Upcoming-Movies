@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/movieListFragment">
+    app:startDestination="@id/welcomeFragment">
 
     <fragment
         android:id="@+id/movieListFragment"
@@ -36,5 +36,16 @@
         <action
             android:id="@+id/action_errorFragment_to_movieListFragment"
             app:destination="@id/movieListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.samueljuma.upcomingmovies.ui.welcome.WelcomeFragment"
+        android:label="Welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_movieListFragment"
+            app:destination="@id/movieListFragment"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>
