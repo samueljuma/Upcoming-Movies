@@ -17,4 +17,7 @@ interface MovieDao {
     @Query("DELETE FROM movies")
     suspend fun clearAllMovies()
 
+    @Query("SELECT * FROM movies ORDER BY RANDOM() LIMIT 1")
+    suspend fun getRandomMovie(): MovieEntity
+
 }

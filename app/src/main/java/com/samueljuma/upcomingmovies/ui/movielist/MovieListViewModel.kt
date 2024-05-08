@@ -59,4 +59,15 @@ class MovieListViewModel @Inject constructor(
     fun doneNavigatingToDetails(){
         _navigateToDetails.value = null
     }
+
+    private val _featuredMovie = MutableLiveData<Movie?>()
+    val featuredMovie: LiveData<Movie?> = _featuredMovie
+
+    fun loadFeaturedMovie() {
+        viewModelScope.launch {
+            _featuredMovie.value = movieRepository.getFeaturedMovie()
+        }
+    }
+
+
 }

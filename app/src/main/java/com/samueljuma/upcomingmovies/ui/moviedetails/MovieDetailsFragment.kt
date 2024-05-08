@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.samueljuma.upcomingmovies.R
 import com.samueljuma.upcomingmovies.databinding.FragmentMovieDetailsBinding
+import com.samueljuma.upcomingmovies.utils.setDetailsTitle
 
 class MovieDetailsFragment : Fragment() {
 
@@ -26,6 +27,8 @@ class MovieDetailsFragment : Fragment() {
         binding = FragmentMovieDetailsBinding.inflate(layoutInflater, container, false)
 
         binding.lifecycleOwner = this //very important when using variables from viewmodel in xml
+
+        setDetailsTitle(arguments.movie)
 
         viewModel.setMovie(arguments.movie)
 

@@ -2,7 +2,6 @@ package com.samueljuma.upcomingmovies.repository
 
 import com.samueljuma.upcomingmovies.data.Movie
 import com.samueljuma.upcomingmovies.data.network.MovieAPIService
-import com.samueljuma.upcomingmovies.data.network.RetrofitClient
 import com.samueljuma.upcomingmovies.data.room.MovieDao
 import com.samueljuma.upcomingmovies.data.room.MovieEntity
 import com.samueljuma.upcomingmovies.utils.Result
@@ -91,6 +90,22 @@ class MovieRepository(
         } catch (e: Exception) {
             Result.Error(e)
         }
+    }
+
+    suspend fun getFeaturedMovie(): Movie {
+        return movieDao.getRandomMovie().toMovie()
+    }
+
+    private fun MovieEntity.toMovie(): Movie {
+        return Movie(
+            id = id,
+            original_language = originalLanguage,
+            original_title = originalTitle,
+            overview = overview,
+            poster_path = posterPath,
+            release_date = releaseDate,
+            title = title
+        )
     }
 
 

@@ -95,6 +95,9 @@ dependencies {
     // circle indicator for sliding views
     implementation("com.tbuonomo:dotsindicator:5.0")
 
+    //Work Manager
+    implementation("androidx.work:work-runtime-ktx:2.9.0")
+
     /**
      * TESTING dependencies
      */

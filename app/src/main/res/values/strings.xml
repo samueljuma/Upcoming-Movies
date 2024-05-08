@@ -8,4 +8,5 @@
     <string name="app_logo">App Logo</string>
     <string name="continue_btn_text">Continue</string>
     <string name="welcome_image">Welcome Image</string>
+    <string name="featured_movie_text">Today\'s Featured Movie</string>
 </resources>
