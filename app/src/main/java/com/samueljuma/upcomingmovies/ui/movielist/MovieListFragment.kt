@@ -33,6 +33,7 @@ import com.samueljuma.upcomingmovies.databinding.FragmentMovieListBinding
 import com.samueljuma.upcomingmovies.utils.API_KEY
 import com.samueljuma.upcomingmovies.utils.NotificationUtils
 import com.samueljuma.upcomingmovies.utils.Result
+import com.samueljuma.upcomingmovies.utils.setDisplayHomeAsEnabled
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -44,8 +45,6 @@ class MovieListFragment : Fragment() {
     private val viewModel: MovieListViewModel by viewModels()
 
     private lateinit var adapter: MovieListAdapter
-
-    private lateinit var featuredMovie: Movie
 
     private lateinit var requestPermissionLauncher: ActivityResultLauncher<String>
 
@@ -60,9 +59,14 @@ class MovieListFragment : Fragment() {
         binding = FragmentMovieListBinding.inflate(layoutInflater, container, false)
 
         //Hide Up Button
-        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        setDisplayHomeAsEnabled(false)
+
+//        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
 
+        /**
+         * Initialize request Permission Launcher
+         */
         requestPermissionLauncher = registerForActivityResult(RequestPermission()){ isGranted->
             if(isGranted){
                 //TODO
@@ -73,6 +77,9 @@ class MovieListFragment : Fragment() {
         }
 
 
+        /**
+         * inflate Handle menu items onClick events
+         */
 
         val menuProvider = object: MenuProvider{
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
@@ -103,6 +110,7 @@ class MovieListFragment : Fragment() {
 
         requireActivity().addMenuProvider(menuProvider, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
+        //Initialize adapter
         adapter = MovieListAdapter(MovieClickListener {
             viewModel.onMovieClicked(it)
         })
@@ -124,14 +132,13 @@ class MovieListFragment : Fragment() {
                     adapter.submitList(movies)
 
                     //set Featured Movie
-//                    viewModel.loadFeaturedMovie()
+                    viewModel.loadFeaturedMovie()
 
                     binding.progressBar3.isVisible = false
 
                     //RequestNotification Permission
                     requestNotificationPermission(requireContext(), binding.root)
 
-//                    checkForAndRequestNotificationPermission(binding.root)
                 }
                 is Result.Error -> {
                     val error = result.exception
@@ -147,15 +154,6 @@ class MovieListFragment : Fragment() {
 
         }
 
-//        viewModel.featuredMovie.observe(viewLifecycleOwner){
-//            it?.let {
-//                if( NotificationUtils.hasNotificationPermission(requireContext())){
-//                    NotificationUtils.sendNotification(requireContext(), it)
-//                }else{
-//                    NotificationUtils.requestNotificationPermission(requestPermissionLauncher)
-//                }
-//            }
-//        }
 
         viewModel.navigateToDetails.observe(viewLifecycleOwner){movie->
             movie?.let {
@@ -177,40 +175,6 @@ class MovieListFragment : Fragment() {
             NotificationUtils.requestNotificationPermission(requestPermissionLauncher,view)
         }
     }
-
-//    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
-//    fun checkForAndRequestNotificationPermission(view: View){
-//        when {
-//            ContextCompat.checkSelfPermission(
-//                requireContext(), Manifest.permission.POST_NOTIFICATIONS
-//            ) == PackageManager.PERMISSION_GRANTED -> {
-//
-//            }
-//
-//            ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(),
-//                Manifest.permission.POST_NOTIFICATIONS)-> {
-//                Snackbar.make(
-//                    view,
-//                    "Notifications are required to receive daily movie notifications. Do you want to enable them?",
-//                    Snackbar.LENGTH_INDEFINITE
-//                ).setAction("See Options") {
-//                    // Launch the permission request if the user chooses to enable notifications
-//                    requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
-//                }.show()
-//            }
-//
-//            else -> {
-//                Snackbar.make(
-//                    view,
-//                    "Please turn on notifications to receive notifications of a featured movie daily",
-//                    Snackbar.LENGTH_INDEFINITE // Use a shorter duration
-//                ).setAction("See Options") {
-//                    requestPermissionLauncher.launch(
-//                        Manifest.permission.POST_NOTIFICATIONS)
-//                }.show()
-//            }
-//        }
-//    }
 
 
 }

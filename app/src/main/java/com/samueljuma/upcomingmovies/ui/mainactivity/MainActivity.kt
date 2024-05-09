@@ -1,22 +1,11 @@
-package com.samueljuma.upcomingmovies
+package com.samueljuma.upcomingmovies.ui.mainactivity
 
-import android.content.BroadcastReceiver
 import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.activity.result.registerForActivityResult
-import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -29,12 +18,10 @@ import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.NetworkType
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
+import com.samueljuma.upcomingmovies.R
 import com.samueljuma.upcomingmovies.databinding.ActivityMainBinding
-import com.samueljuma.upcomingmovies.utils.API_KEY
-import com.samueljuma.upcomingmovies.utils.NotificationUtils.requestNotificationPermission
-import com.samueljuma.upcomingmovies.utils.Result
+import com.samueljuma.upcomingmovies.utils.PREF_KEY_FIRST_LAUNCH
 import com.samueljuma.upcomingmovies.utils.WORK_NAME
-import com.samueljuma.upcomingmovies.viewmodels.MoviesViewModel
 import com.samueljuma.upcomingmovies.workers.FeaturedMovieNotificationWorker
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.concurrent.TimeUnit
@@ -48,57 +35,40 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
 
+    private lateinit var sharedPreferences: SharedPreferences
 
-    //I opted to request permission from Movie Details Fragment
-
-//    private val requestPermissionLauncher: ActivityResultLauncher<String> by lazy {
-//        registerForActivityResult(
-//            ActivityResultContracts.RequestPermission()
-//        ){isGranted ->
-//            if(isGranted){
-//               scheduleFeaturedMovieNotification()
-//            }else{
-//                Toast.makeText(applicationContext,"The App needs Notification to show show Featured Movie of the day", Toast.LENGTH_SHORT).show()
-//            }
-//        }
-//    }
-
-
-//    private val permissionReceiver = object : BroadcastReceiver(){
-//
-//        @RequiresApi(Build.VERSION_CODES.TIRAMISU)
-//        override fun onReceive(context: Context, intent: Intent?) {
-//            if (intent?.action == FeaturedMovieNotificationWorker.ACTION_PERMISSION_NOT_GRANTED){
-//                requestNotificationPermission(requestPermissionLauncher)
-//            }
-//
-//        }
-//    }
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        enableEdgeToEdge()
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-//
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-//            insets
-//        }
+
+        sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navController = navHostFragment.navController
         appBarConfiguration = AppBarConfiguration(navController.graph)
 
+        /**
+         * I used Shared Preferences to store the value for isFirstLaunch
+         */
+        val isFirstLaunch = sharedPreferences.getBoolean(PREF_KEY_FIRST_LAUNCH, true)
+
+        if(isFirstLaunch){
+            sharedPreferences.edit().putBoolean(PREF_KEY_FIRST_LAUNCH, false).apply()
+        }else{
+            navController.navigate(R.id.action_welcomeFragment_to_movieListFragment)
+        }
+
+
+
         setSupportActionBar(binding.toolbar)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-//
-//        //Register Receiver
-//        val filter = IntentFilter(FeaturedMovieNotificationWorker.ACTION_PERMISSION_NOT_GRANTED)
-//        registerReceiver(permissionReceiver, filter, RECEIVER_NOT_EXPORTED)
+
+
 
         //Schedule Notification when Activity is created
         scheduleFeaturedMovieNotification()
@@ -129,9 +99,4 @@ class MainActivity : AppCompatActivity() {
             workRequest
         )
     }
-
-//    override fun onDestroy() {
-//        super.onDestroy()
-//        unregisterReceiver(permissionReceiver)
-//    }
 }

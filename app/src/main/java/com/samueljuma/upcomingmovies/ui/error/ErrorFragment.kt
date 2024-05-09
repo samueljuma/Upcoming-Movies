@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.samueljuma.upcomingmovies.R
 import com.samueljuma.upcomingmovies.databinding.FragmentErrorBinding
 import com.samueljuma.upcomingmovies.databinding.FragmentMovieDetailsBinding
+import com.samueljuma.upcomingmovies.utils.setDisplayHomeAsEnabled
 
 class ErrorFragment : Fragment() {
 
@@ -20,6 +21,8 @@ class ErrorFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentErrorBinding.inflate(layoutInflater, container,false)
+
+        setDisplayHomeAsEnabled(false)
 
         binding.retryBtn.setOnClickListener{
             this.findNavController().navigate(

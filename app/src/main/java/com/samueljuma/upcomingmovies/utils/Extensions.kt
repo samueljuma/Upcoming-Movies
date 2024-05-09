@@ -9,3 +9,9 @@ fun Fragment.setDetailsTitle(movie: Movie){
         (activity as AppCompatActivity).supportActionBar?.title = movie.title
     }
 }
+
+fun Fragment.setDisplayHomeAsEnabled(boolean: Boolean){
+    if(activity is AppCompatActivity){
+        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(boolean)
+    }
+}

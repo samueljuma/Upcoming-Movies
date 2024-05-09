@@ -36,13 +36,6 @@ class FeaturedMovieNotificationWorker(
                 Log.i(TAG, "Success showing Notification")
             }else{
 
-                /**
-                 * This did not work. Not sure Why yet
-                 */
-//                // Broadcast an event indicating that permission is not granted
-//                val intent = Intent(ACTION_PERMISSION_NOT_GRANTED)
-//                applicationContext.sendBroadcast(intent)
-
                 Log.i(TAG, "It Appears there is no permission to show notification")
             }
 
@@ -55,7 +48,6 @@ class FeaturedMovieNotificationWorker(
     }
 
     companion object {
-//        const val ACTION_PERMISSION_NOT_GRANTED = "ACTION_PERMISSION_NOT_GRANTED"
         const val TAG = "FeaturedMovieNotificationWorker"
     }
 }

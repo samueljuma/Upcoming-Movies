@@ -1,7 +1,6 @@
 package com.samueljuma.upcomingmovies.utils
 
 import android.Manifest
-import android.app.Activity
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -16,10 +15,9 @@ import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
-import com.samueljuma.upcomingmovies.MovieDetailsNotificationActivity
+import com.samueljuma.upcomingmovies.ui.notificationdetails.MovieDetailsNotificationActivity
 import com.samueljuma.upcomingmovies.R
 import com.samueljuma.upcomingmovies.data.Movie
-import com.samueljuma.upcomingmovies.ui.movielist.MovieListFragment
 
 object NotificationUtils  {
 

@@ -28,6 +28,7 @@ class MovieDetailsFragment : Fragment() {
 
         binding.lifecycleOwner = this //very important when using variables from viewmodel in xml
 
+        //Set dynamic details fragment title
         setDetailsTitle(arguments.movie)
 
         viewModel.setMovie(arguments.movie)
