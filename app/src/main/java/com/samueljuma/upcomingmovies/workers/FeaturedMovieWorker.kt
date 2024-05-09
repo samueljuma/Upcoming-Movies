@@ -11,7 +11,12 @@ import com.samueljuma.upcomingmovies.data.room.MovieDatabase
 import com.samueljuma.upcomingmovies.repository.MovieRepository
 import com.samueljuma.upcomingmovies.utils.NotificationUtils
 import com.samueljuma.upcomingmovies.utils.toMovie
+import dagger.assisted.Assisted
+import dagger.assisted.AssistedInject
 import retrofit2.HttpException
+import javax.inject.Inject
+import javax.inject.Singleton
+
 
 class FeaturedMovieNotificationWorker(
     context: Context,
@@ -26,6 +31,10 @@ class FeaturedMovieNotificationWorker(
 
             if(NotificationUtils.hasNotificationPermission(applicationContext)){
                 Log.i(TAG, "Notification is granted")
+
+                /**
+                 * Figure Out how to inject a repo class later
+                 */
 //                val featuredMovie = repository.getFeaturedMovie()
                 val featuredMovie = database.movieDao.getRandomMovie()
 

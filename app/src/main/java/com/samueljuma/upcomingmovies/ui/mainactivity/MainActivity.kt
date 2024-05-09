@@ -22,6 +22,7 @@ import com.samueljuma.upcomingmovies.R
 import com.samueljuma.upcomingmovies.databinding.ActivityMainBinding
 import com.samueljuma.upcomingmovies.utils.PREF_KEY_FIRST_LAUNCH
 import com.samueljuma.upcomingmovies.utils.WORK_NAME
+import com.samueljuma.upcomingmovies.utils.scheduleFeaturedMovieNotification
 import com.samueljuma.upcomingmovies.workers.FeaturedMovieNotificationWorker
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.concurrent.TimeUnit
@@ -67,11 +68,9 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-
-
-
-        //Schedule Notification when Activity is created
-        scheduleFeaturedMovieNotification()
+//
+//        //Schedule Notification when Activity is created
+//        scheduleFeaturedMovieNotification(applicationContext)
 
     }
 
@@ -79,24 +78,5 @@ class MainActivity : AppCompatActivity() {
         return findNavController(R.id.fragmentContainerView).navigateUp(appBarConfiguration)
     }
 
-    /**
-     * Later try to move this to utils
-     */
-    private fun scheduleFeaturedMovieNotification(){
-        val constraints = Constraints.Builder()
-            .setRequiredNetworkType(NetworkType.NOT_REQUIRED)
-            .build()
 
-        val workRequest = PeriodicWorkRequestBuilder<FeaturedMovieNotificationWorker>(
-            10, TimeUnit.SECONDS
-        )
-            .setConstraints(constraints)
-            .build()
-
-        WorkManager.getInstance(applicationContext).enqueueUniquePeriodicWork(
-            WORK_NAME,
-            ExistingPeriodicWorkPolicy.KEEP,
-            workRequest
-        )
-    }
 }
