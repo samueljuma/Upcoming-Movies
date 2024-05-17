@@ -2,8 +2,10 @@ package com.samueljuma.upcomingmovies.ui.mainactivity
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -55,27 +57,32 @@ class MainActivity : AppCompatActivity() {
         /**
          * I used Shared Preferences to store the value for isFirstLaunch
          */
-        val isFirstLaunch = sharedPreferences.getBoolean(PREF_KEY_FIRST_LAUNCH, true)
 
-        if(isFirstLaunch){
-            sharedPreferences.edit().putBoolean(PREF_KEY_FIRST_LAUNCH, false).apply()
-        }else{
-            navController.navigate(R.id.action_welcomeFragment_to_movieListFragment)
+        if (isFirstRun()) {
+            navController.setGraph(R.navigation.nav_graph)
+        } else {
+            val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
+            navGraph.setStartDestination(R.id.movieListFragment)
+            navController.graph = navGraph
         }
-
-
 
         setSupportActionBar(binding.toolbar)
         setupActionBarWithNavController(navController, appBarConfiguration)
-
-//
-//        //Schedule Notification when Activity is created
-//        scheduleFeaturedMovieNotification(applicationContext)
 
     }
 
     override fun onSupportNavigateUp(): Boolean {
         return findNavController(R.id.fragmentContainerView).navigateUp(appBarConfiguration)
+    }
+
+
+    private fun isFirstRun(): Boolean {
+        val sharedPreferences = getSharedPreferences("my_preferences", Context.MODE_PRIVATE)
+        val isFirstRun = sharedPreferences.getBoolean(PREF_KEY_FIRST_LAUNCH, true)
+        if (isFirstRun) {
+            sharedPreferences.edit().putBoolean(PREF_KEY_FIRST_LAUNCH, false).apply()
+        }
+        return isFirstRun
     }
 
 

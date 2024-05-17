@@ -36,9 +36,9 @@ class WelcomeFragment : Fragment() {
 
         val listOfWelcomeItems = listOf(
             WelcomeItem(0, R.drawable.welcome, getString(R.string.welcome_message_1)),
-            WelcomeItem(1, R.drawable.welcome, getString(R.string.welcome_message_1)),
-            WelcomeItem(0, R.drawable.welcome, getString(R.string.welcome_message_1)),
-            WelcomeItem(1, R.drawable.welcome, getString(R.string.welcome_message_1))
+            WelcomeItem(1, R.drawable.welcome, getString(R.string.welcome_message_2)),
+            WelcomeItem(2, R.drawable.welcome, getString(R.string.welcome_message_3)),
+//            WelcomeItem(1, R.drawable.welcome, getString(R.string.welcome_message_1))
         )
 
         adapter.submitList(listOfWelcomeItems)

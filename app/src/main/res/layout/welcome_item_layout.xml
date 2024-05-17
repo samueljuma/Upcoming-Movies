@@ -32,6 +32,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/welcome"
                 app:srcCompat="@drawable/welcome"
                 android:contentDescription="@string/welcome_image" />
 
@@ -42,7 +43,8 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
-                android:text="@string/welcome_message_1"
+                tools:text="@string/welcome_message_1"
+                android:text="@{welcomeItem.message}"
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"

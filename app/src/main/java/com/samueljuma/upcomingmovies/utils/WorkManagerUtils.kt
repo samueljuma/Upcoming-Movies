@@ -15,8 +15,8 @@ fun scheduleFeaturedMovieNotification(context: Context){
         .build()
 
     val workRequest = PeriodicWorkRequestBuilder<FeaturedMovieNotificationWorker>(
-        1, TimeUnit.SECONDS
-    )
+        1, TimeUnit.DAYS
+    ) //Once Daily
         .setConstraints(constraints)
         .build()
 

@@ -5,6 +5,8 @@
     <string name="sample_overview">An American nun embarks on a new journey when she joins a remote convent in the Italian countryside. However, her warm welcome quickly turns into a living nightmare when she discovers her new home harbours a sinister secret and unspeakable horrors.</string>
     <string name="error_message">Looks Like an Error occurred.\nCheck Your Internet and Try Again.</string>
     <string name="welcome_message_1">A warm welcome to our Upcoming Movies App. \n\nWe are so happy to have you onboard.\n\n Swipe through to learn more about the app or click continue to go to home screen </string>
+    <string name="welcome_message_2">Hopefully you love movies like we do. \n\nThe app keeps you updated of any upcoming movies along with their release dates and overviews.   </string>
+    <string name="welcome_message_3">At any point in time, you can always refresh the list of movies to get an updated list of upcoming movies at that point in time. \n\nThat\'s it. \n\nHave fun. </string>
     <string name="app_logo">App Logo</string>
     <string name="continue_btn_text">Continue</string>
     <string name="welcome_image">Welcome Image</string>

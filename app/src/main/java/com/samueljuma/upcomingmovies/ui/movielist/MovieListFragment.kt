@@ -91,7 +91,7 @@ class MovieListFragment : Fragment() {
                     R.id.menu_refresh -> {
                         try{
                             viewModel.refreshUpcomingMovies(API_KEY)
-                            Toast.makeText(context, "Movie data is now up to date", Toast.LENGTH_SHORT).show()
+//                            Toast.makeText(context, "Movie data is now up to date", Toast.LENGTH_SHORT).show()
                         }catch(e:ExceptionInInitializerError){
                             Toast.makeText(context, "Failed to Refresh", Toast.LENGTH_SHORT).show()
                         }
