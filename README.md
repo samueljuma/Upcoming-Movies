@@ -22,6 +22,7 @@ Project 5: Android Kotlin Developer Udacity | Nanodegree
 ## Implementation
 ### Built with 
 + [Kotlin](https://kotlinlang.org/) 
+
   > Kotlin is a programming language that makes coding concise, cross-platform, and fun. It is Google's preferred language for Android app development.
 + [XML](https://developer.android.com/develop/ui/views/layout/declaring-layout) 
   > used to implement UI-related data
