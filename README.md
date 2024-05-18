@@ -1,4 +1,4 @@
-<img src="screenshots/icon.png" alt="App Logo"/>
+<img src="screenshots/icon.svg" height="20" width="20" alt="App Logo"/>
 
 # Upcoming-Movies
 Project 5: Android Kotlin Developer Udacity | Nanodegree
