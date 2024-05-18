@@ -20,7 +20,11 @@ Project 5: Android Kotlin Developer Udacity | Nanodegree
 
 [//]: # (| <img src="screenshots/4.jpeg"/> | <img src="screenshots/5.jpeg"/> | <img src="screenshots/6.jpeg"/> |)
 
+
 ## Implementation
+### Feature Graphics 
+<div style="text-align: center;"><img src="screenshots/features.png" alt="Feature Graphics"/></div>
+
 ### Built with 
 + [Kotlin](https://kotlinlang.org/) 
 
