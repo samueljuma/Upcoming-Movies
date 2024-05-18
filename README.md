@@ -1,12 +1,7 @@
 
-# <img src="screenshots/icon.svg" height="30" width="30" alt="App Logo"/> Upcoming-Movies
+# <img src="screenshots/icon.svg" height="20" width="20" alt="App Logo"/> Upcoming-Movies
 Project 5: Android Kotlin Developer Udacity | Nanodegree
 
-## App ScreenShots
-| <img src="screenshots/1.png"/>  | <img src="screenshots/2.png"/>  | <img src="screenshots/3.png"/>  | <img src="screenshots/4.png"/> |
-|:-------------------------------:|:-------------------------------:|:-------------------------------:|:------------------------------:|
-
-[//]: # (| <img src="screenshots/4.jpeg"/> | <img src="screenshots/5.jpeg"/> | <img src="screenshots/6.jpeg"/> |)
 ## Rationale
 > The App is inspired by The Android Kotlin Developer Nanodegree Course on Udacity. It's the final project of the Five projects in the course.
 > I Chose to develop a custom app, so I can build everything from scratch. It's been fun. 
@@ -18,6 +13,12 @@ Project 5: Android Kotlin Developer Udacity | Nanodegree
   + API Connectivity and Data Persistence
   + Hardware Integration
   + User-based Functionality
+
+## App ScreenShots
+| <img src="screenshots/1.png"/>  | <img src="screenshots/2.png"/>  | <img src="screenshots/3.png"/>  | <img src="screenshots/4.png"/> |
+|:-------------------------------:|:-------------------------------:|:-------------------------------:|:------------------------------:|
+
+[//]: # (| <img src="screenshots/4.jpeg"/> | <img src="screenshots/5.jpeg"/> | <img src="screenshots/6.jpeg"/> |)
 
 ## Implementation
 ### Built with 
