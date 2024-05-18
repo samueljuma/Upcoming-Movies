@@ -31,6 +31,7 @@ Project 5: Android Kotlin Developer Udacity | Nanodegree
   > is a software architectural pattern that is commonly used in Android app development.
 ### Tools and Libraries
 + [Retrofit](https://square.github.io/retrofit/) 
+
   > A type-safe HTTP client for Android and Java.
 + [Room](https://developer.android.com/training/data-storage/room) 
   > For data persistence
