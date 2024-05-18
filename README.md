@@ -14,6 +14,10 @@ Project 5: Android Kotlin Developer Udacity | Nanodegree
   + Hardware Integration
   + User-based Functionality
 
+### Feature Graphics
+
+ <p align = "center"><img src="screenshots/features.svg" height="200" width="400" alt="Feature Graphics"/></p>
+
 ## App ScreenShots
 | <img src="screenshots/1.png"/>  | <img src="screenshots/2.png"/>  | <img src="screenshots/3.png"/>  | <img src="screenshots/4.png"/> |
 |:-------------------------------:|:-------------------------------:|:-------------------------------:|:------------------------------:|
@@ -22,10 +26,6 @@ Project 5: Android Kotlin Developer Udacity | Nanodegree
 
 
 ## Implementation
-### Feature Graphics 
-
- <p align = "center"><img src="screenshots/features.svg" height="200" width="400" alt="Feature Graphics"/></p>
-
 ### Built with 
 + [Kotlin](https://kotlinlang.org/) 
 
