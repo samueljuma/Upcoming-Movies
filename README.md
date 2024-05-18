@@ -23,7 +23,8 @@ Project 5: Android Kotlin Developer Udacity | Nanodegree
 
 ## Implementation
 ### Feature Graphics 
- <div style="text-align: center;"><img src="screenshots/features.svg" height="200" width="400" alt="Feature Graphics"/></div>
+
+ <p align = "center"><img src="screenshots/features.svg" height="200" width="400" alt="Feature Graphics"/></p>
 
 ### Built with 
 + [Kotlin](https://kotlinlang.org/) 
