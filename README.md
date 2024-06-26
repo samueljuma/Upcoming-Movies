@@ -2,6 +2,10 @@
 # <img src="screenshots/icon.svg" height="20" width="20" alt="App Logo"/> Upcoming-Movies
 Project 5: Android Kotlin Developer Udacity | Nanodegree
 
+* The App Consumes https://www.themoviedb.org/ REST APIs to fetch upcoming movies and their details
+
+<a href="https://play.google.com/store/apps/details?id=com.samueljuma.upcomingmovies"><img alt="Get it on Google Play" src="screenshots/playstoreimage.png"/></a>
+
 ## Rationale
 > The App is inspired by The Android Kotlin Developer Nanodegree Course on Udacity. It's the final project of the Five projects in the course.
 > I Chose to develop a custom app, so I can build everything from scratch. It's been fun. 
