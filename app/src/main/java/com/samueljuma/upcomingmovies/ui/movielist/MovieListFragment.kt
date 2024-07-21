@@ -28,7 +28,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.samueljuma.upcomingmovies.R
-import com.samueljuma.upcomingmovies.data.Movie
+import com.samueljuma.upcomingmovies.logic.data.Movie
 import com.samueljuma.upcomingmovies.databinding.FragmentMovieListBinding
 import com.samueljuma.upcomingmovies.utils.API_KEY
 import com.samueljuma.upcomingmovies.utils.NotificationUtils

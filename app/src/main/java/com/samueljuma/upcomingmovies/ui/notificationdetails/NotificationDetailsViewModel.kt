@@ -3,7 +3,7 @@ package com.samueljuma.upcomingmovies.ui.notificationdetails
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.samueljuma.upcomingmovies.data.Movie
+import com.samueljuma.upcomingmovies.logic.data.Movie
 
 class NotificationDetailsViewModel: ViewModel() {
 

@@ -1,9 +1,9 @@
-package com.samueljuma.upcomingmovies.repository
+package com.samueljuma.upcomingmovies.logic.repository
 
-import com.samueljuma.upcomingmovies.data.Movie
-import com.samueljuma.upcomingmovies.data.network.MovieAPIService
-import com.samueljuma.upcomingmovies.data.room.MovieDao
-import com.samueljuma.upcomingmovies.data.room.MovieEntity
+import com.samueljuma.upcomingmovies.logic.data.Movie
+import com.samueljuma.upcomingmovies.logic.data.network.MovieAPIService
+import com.samueljuma.upcomingmovies.logic.data.room.MovieDao
+import com.samueljuma.upcomingmovies.logic.data.room.MovieEntity
 import com.samueljuma.upcomingmovies.utils.Result
 
 class MovieRepository(

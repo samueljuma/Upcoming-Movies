@@ -1,4 +1,4 @@
-package com.samueljuma.upcomingmovies
+package com.samueljuma.upcomingmovies.logic.configs
 
 import android.app.Application
 import com.samueljuma.upcomingmovies.utils.scheduleFeaturedMovieNotification

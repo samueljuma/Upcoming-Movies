@@ -1,4 +1,4 @@
-package com.samueljuma.upcomingmovies.data.network
+package com.samueljuma.upcomingmovies.logic.data.network
 
 import com.samueljuma.upcomingmovies.utils.BASE_URL
 import com.squareup.moshi.Moshi

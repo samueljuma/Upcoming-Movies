@@ -1,6 +1,6 @@
 package com.samueljuma.upcomingmovies.di
 
-import com.samueljuma.upcomingmovies.data.network.MovieAPIService
+import com.samueljuma.upcomingmovies.logic.data.network.MovieAPIService
 import com.samueljuma.upcomingmovies.utils.BASE_URL
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -25,7 +25,7 @@ object NetworkModule {
     }
     @Singleton
     @Provides
-    fun provideMovieAPIService(retrofit: Retrofit): MovieAPIService{
+    fun provideMovieAPIService(retrofit: Retrofit): MovieAPIService {
         return retrofit.create(MovieAPIService::class.java)
     }
 

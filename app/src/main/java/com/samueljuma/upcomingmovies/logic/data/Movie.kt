@@ -1,4 +1,4 @@
-package com.samueljuma.upcomingmovies.data
+package com.samueljuma.upcomingmovies.logic.data
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

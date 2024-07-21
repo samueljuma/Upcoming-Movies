@@ -5,19 +5,16 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
-import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.samueljuma.upcomingmovies.ui.mainactivity.MainActivity
 import com.samueljuma.upcomingmovies.R
-import com.samueljuma.upcomingmovies.data.Movie
 import com.samueljuma.upcomingmovies.databinding.ActivityMovieDetailsNotificationBinding
+import com.samueljuma.upcomingmovies.logic.data.Movie
+import com.samueljuma.upcomingmovies.ui.base.BaseActivity
+import com.samueljuma.upcomingmovies.ui.mainactivity.MainActivity
 
-class MovieDetailsNotificationActivity : AppCompatActivity() {
+class MovieDetailsNotificationActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMovieDetailsNotificationBinding
-
-    private val viewModel: NotificationDetailsViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,6 +62,4 @@ class MovieDetailsNotificationActivity : AppCompatActivity() {
         startActivity(homeIntent)
         finish()
     }
-
-
 }

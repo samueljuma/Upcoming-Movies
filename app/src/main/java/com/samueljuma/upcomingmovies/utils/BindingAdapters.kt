@@ -5,7 +5,7 @@ import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.samueljuma.upcomingmovies.R
-import com.samueljuma.upcomingmovies.data.Movie
+import com.samueljuma.upcomingmovies.logic.data.Movie
 
 @BindingAdapter("imageUrl")
 fun loadImage(imageView: ImageView, movie: Movie?){
