@@ -17,7 +17,7 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import com.samueljuma.upcomingmovies.ui.notificationdetails.MovieDetailsNotificationActivity
 import com.samueljuma.upcomingmovies.R
-import com.samueljuma.upcomingmovies.data.Movie
+import com.samueljuma.upcomingmovies.logic.data.Movie
 
 object NotificationUtils  {
 

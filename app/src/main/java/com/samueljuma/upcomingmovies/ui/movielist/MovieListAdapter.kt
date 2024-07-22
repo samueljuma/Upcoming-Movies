@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.samueljuma.upcomingmovies.data.Movie
+import com.samueljuma.upcomingmovies.logic.data.Movie
 import com.samueljuma.upcomingmovies.databinding.MovieItemLayoutBinding
 
 class MovieListAdapter(val clickListener: MovieClickListener): ListAdapter<Movie, MovieListAdapter.ViewHolder> (MovieDiffCallBack()){

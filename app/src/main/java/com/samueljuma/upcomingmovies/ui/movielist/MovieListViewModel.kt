@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.samueljuma.upcomingmovies.data.Movie
-import com.samueljuma.upcomingmovies.repository.MovieRepository
+import com.samueljuma.upcomingmovies.logic.data.Movie
+import com.samueljuma.upcomingmovies.logic.repository.MovieRepository
 import com.samueljuma.upcomingmovies.utils.Result
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

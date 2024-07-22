@@ -7,7 +7,7 @@
     <data>
         <variable
             name="welcomeItem"
-            type="com.samueljuma.upcomingmovies.data.WelcomeItem" />
+            type="com.samueljuma.upcomingmovies.logic.data.WelcomeItem" />
     </data>
 
     <androidx.cardview.widget.CardView

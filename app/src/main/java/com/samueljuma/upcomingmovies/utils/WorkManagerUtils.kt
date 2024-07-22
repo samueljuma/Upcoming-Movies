@@ -6,7 +6,7 @@ import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.NetworkType
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
-import com.samueljuma.upcomingmovies.workers.FeaturedMovieNotificationWorker
+import com.samueljuma.upcomingmovies.logic.workers.FeaturedMovieNotificationWorker
 import java.util.concurrent.TimeUnit
 
 fun scheduleFeaturedMovieNotification(context: Context){

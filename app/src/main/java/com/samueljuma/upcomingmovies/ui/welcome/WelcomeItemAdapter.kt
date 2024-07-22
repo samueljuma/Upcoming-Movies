@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil.ItemCallback
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.samueljuma.upcomingmovies.data.WelcomeItem
+import com.samueljuma.upcomingmovies.logic.data.WelcomeItem
 import com.samueljuma.upcomingmovies.databinding.WelcomeItemLayoutBinding
 
 class WelcomeItemAdapter: ListAdapter<WelcomeItem, WelcomeItemAdapter.ViewHolder>(WelcomeItemDiffCallBack()) {

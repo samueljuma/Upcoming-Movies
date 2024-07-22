@@ -6,7 +6,7 @@
     <data>
         <variable
             name="movie"
-            type="com.samueljuma.upcomingmovies.data.Movie" />
+            type="com.samueljuma.upcomingmovies.logic.data.Movie" />
 
     </data>
 

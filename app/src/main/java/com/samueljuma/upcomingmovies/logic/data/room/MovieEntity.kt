@@ -1,4 +1,4 @@
-package com.samueljuma.upcomingmovies.data.room
+package com.samueljuma.upcomingmovies.logic.data.room
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

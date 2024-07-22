@@ -11,4 +11,6 @@
     <string name="continue_btn_text">Continue</string>
     <string name="welcome_image">Welcome Image</string>
     <string name="featured_movie_text">Today\'s Featured Movie</string>
+    <string name="oops_your_internet_is_off">Oops! Your internet is off</string>
+    <string name="turn_on">Turn On</string>
 </resources>

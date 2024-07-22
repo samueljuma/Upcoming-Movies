@@ -1,7 +1,7 @@
 package com.samueljuma.upcomingmovies.utils
 
-import com.samueljuma.upcomingmovies.data.Movie
-import com.samueljuma.upcomingmovies.data.room.MovieEntity
+import com.samueljuma.upcomingmovies.logic.data.Movie
+import com.samueljuma.upcomingmovies.logic.data.room.MovieEntity
 
 fun MovieEntity.toMovie(): Movie {
     return Movie(

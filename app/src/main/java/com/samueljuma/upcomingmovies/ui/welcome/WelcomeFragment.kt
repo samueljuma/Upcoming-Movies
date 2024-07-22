@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.samueljuma.upcomingmovies.R
-import com.samueljuma.upcomingmovies.data.WelcomeItem
+import com.samueljuma.upcomingmovies.logic.data.WelcomeItem
 import com.samueljuma.upcomingmovies.databinding.FragmentWelcomeBinding
 
 

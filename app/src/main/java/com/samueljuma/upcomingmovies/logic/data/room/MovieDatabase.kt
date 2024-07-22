@@ -1,4 +1,4 @@
-package com.samueljuma.upcomingmovies.data.room
+package com.samueljuma.upcomingmovies.logic.data.room
 
 import android.content.Context
 import androidx.room.Database
@@ -9,13 +9,13 @@ import com.samueljuma.upcomingmovies.utils.DATABASE_NAME
 @Database(entities = [MovieEntity::class], version = 1, exportSchema = false)
 abstract class MovieDatabase : RoomDatabase(){
 
-    abstract val movieDao:MovieDao
+    abstract val movieDao: MovieDao
 
     companion object{
         @Volatile
         private var INSTANCE: MovieDatabase? = null
 
-        fun getInstance(context: Context): MovieDatabase{
+        fun getInstance(context: Context): MovieDatabase {
             synchronized(this){
                 var instance = INSTANCE
                 if(instance == null){
